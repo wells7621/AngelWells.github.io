@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 
+
 /* variables */
 :root {
-    --font-family: "Playfair Display", serif;
+    --font-heading: "Playfair Display", cursive;
+    --font-body: "Noto Sans", sans-serif;
     --normal-font: 400;
     --bold-font: 700;
     --bolder-font: 900;
@@ -42,15 +44,22 @@ a:hover {
     color: var(--secondary-color);
 }
 
-body {
-    font-family: var(--font-family);
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: var(--bold-font);
+}
+
+body, p {
+    font-family: var(--font-body);
+    font-weight: var(--normal-font);
+    line-height: var(--line-height);
 }
 
 nav {
     position: sticky; /* makes the navbar stay at the top no matter what */
     top: 0;
     left: 0;
-    z-index: 1; /*makes ure the navbar displays over any element */
+    z-index: 10; /*makes ure the navbar displays over any element */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,6 +76,7 @@ nav {
 } */
 
 nav h1 {
+    font-weight: var(--bold-font);
     color: var(--primary-color);
 }
 
@@ -98,6 +108,17 @@ nav ul li {
     display: none;
 }
 
+@keyframes fadeInSkew {
+    0% {
+        opacity: 0;
+        transform: rotate(-5deg) skew(3deg, 2deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) skew(0deg, 0deg);
+    }
+}
+
 .hero {
     display: flex;
     align-items: center;
@@ -106,20 +127,35 @@ nav ul li {
     max-width: 68.75rem;
     margin: auto;
     margin-bottom: 3rem;
+    scroll-margin-top: 6rem;
 }
 
+/* polaroid effect for image */
 .hero img {
-    height: 30.5rem;
-    width: 30.5rem;
-    border-radius: 50%;
+    height: 28rem;
+    width: 28rem;
     object-fit: cover;
+    background-color: white;
+    padding: 1.5rem 1.5rem 3rem;
+    border: 2px solid #fff; /* polaroid border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    transform: rotate(-3deg);
     margin-top: 20px;
+    /* transition: transform 0.3s ease; */
+    animation: fadeInSkew 1.5s ease forwards;
 }
+
+/* .hero img:hover {
+    transform: rotate(0deg); /* straightens picture 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+} */
 
 .bio {
     width: 25rem;
     padding: 0.625rem;
     border-radius: 6px;
+    animation: slideInRight 2s ease forwards;
     /* box-shadow: 0px 2px 15px 2px var(--primary-shadow); */
 }
 
@@ -140,11 +176,116 @@ nav ul li {
 
 .more-about h2 {
     margin-bottom: var(--bottom-margin);
-    color: var(--primary-color);
     text-align: center;
+    color: var(--primary-color);
 }
 
 .more-about p {
     line-height: var(--line-height);
     padding: 0.4rem;
+}
+
+.skills {
+    max-width: 68.75rem; 
+    margin: auto;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.skills-header {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.skills-header img {
+    padding: 1.25rem;
+}
+
+.icon {
+    width: 11.875rem;
+    height: 11.25rem;
+}
+
+.icon-card {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--secondary-shadow);
+    padding: 20px;
+    margin: 10px;
+}
+
+.project-header {
+    margin-top: 5rem;
+    display: flex;
+    white-space: nowrap;
+    width: 300%;
+    height: clamp(3em, 10vw, 6em);
+    overflow: hidden;
+}
+
+.loop-text {
+    font-size: clamp(1.0rem, 4vw, 2rem);
+    color: var(--primary-color);
+    line-height: 1.2;
+    /* text-transform: uppercase; */
+    font-weight: var(--bold-font);
+    padding: 0 0.30em;
+    animation: loopText 5s infinite linear;
+}
+
+@keyframes loopText {
+    from {
+        transform: translateX(0);
+     }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.projects {
+    background-color: var(--bg-color);
+    padding: 32px 0;
+    margin-top: 2rem;
+}
+  
+.project-pic {
+    width: 65%;
+    height: 60%;
+}
+  
+.projects-container {
+    text-align: center;
+    width: 21.875rem;
+    padding: 1rem;
+}
+
+.project-container p {
+    padding: 0.4rem;
+}
+
+.projects-title {
+    margin-bottom: var(--bottom-margin);
+}
+
+.project-details {
+    margin-bottom: var(--bottom-margin);
+}
+  
+.project-card {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--primary-shadow);
+    padding: 20px;
+    margin: 10px;
+}
+
+/* for mobile screens */
+@media (max-width: 768px) {
+    .hero img {
+        height: 22rem;
+        width: 22rem;
+        padding: 1rem 1rem 2rem; /* adjusted padding for smaller screens */
+        transform: rotate(0deg); /* keep it straight for simplicity */
+    }
 }
