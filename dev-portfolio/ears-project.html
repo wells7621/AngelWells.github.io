@@ -8,6 +8,7 @@
             <!-- CSS styles -->
             <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Merriweather+Sans:wght@300;400;700&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
             <link rel="stylesheet" href="assets/css/styles.css">
 
             <!-- icons -->
@@ -39,104 +40,133 @@
             </button> -->
         </nav>
 
-        <!-- Main Content -->
-        <div class="container">
-            <!-- Hero Section -->
-            <section class="ears-project-hero">
-                <h1>Audio Dichotics: Designing and Building a Web-Based Auditory Training Program</h1>
-            </section>
+        <div class="landing-image umrf-hero">
+            <img src="assets/images/ears-home-page-mockup.png" alt="Audio Dichotics Website mockup image">
+        </div>
 
-            <!-- Project Overview -->
-            <section>
-                <p>As part of a cross-functional team, I helped design and develop a web-based training tool aimed at improving auditory processing skills. Over the course of four sprints, we built an interactive site where users could complete audio-based training exercises and receive feedback. My role focused on front-end development and interface consistency.</p>
+        <section>
+            <div class="content-wrapper">
+                <div class="overview-grid">
+
+                    <!-- column 1 -->
+                    <div class="summary">
+                        <h3>Summary</h3>
+                        <h2>Audio Dichotics: Designing and Building a Web-Based Auditory Training Program</h2>
+                        <p>As part of a cross-functional team, I helped design and develop a web-based training tool aimed at improving auditory processing skills. Over the course of four sprints, we built an interactive site where users could complete audio-based training exercises and receive feedback. My role focused on front-end development and interface consistency.</p>
+                    </div>
                 
-                <div class="project-image">
+                <!-- <div class="project-image">
                     <img src="assets/images/ears-home-page-mockup.png" alt="Screenshot of the landing page">
                     <p class="caption">Landing page of the auditory training program</p>
+                </div> -->
+
+                    <!-- column 2 -->
+                    <div class="details">
+                        <div class="detail-item">
+                            <h4>My Role</h4>
+                            <p>
+                                Front-End Developer
+                            </p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Tools</h4>
+                            <p>Balsamiq, Github, Visual Studio Code</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Duration</h4>
+                            <p>September 2023-April 2024</p>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- The Problem -->
-            <section>
-                <h2>The Problem</h2>
-                <p>The original web tool needed to be expanded with additional auditory training content, but lacked a user-friendly UI and functional structure. Our task was to design and build new training pages, maintain visual consistency, and ensure everything worked smoothly across sessions.</p>
-            </section>
+        <!-- The Problem -->
+        <section>
+            <div class="content-wrapper">
+                <h2 class="section-title">The Problem</h2>
+                <p class="problem-text">The original web tool needed to be expanded with additional auditory training content, but lacked a user-friendly UI and functional structure. Our task was to design and build new training pages, maintain visual consistency, and ensure everything worked smoothly across sessions.</p>
+            </div>
+        </section>
 
-            <hr class="divider">
+        <hr class="divider">
 
-            <!-- The Process -->
-            <section>
-                <h2>The Process (Sprints Overview)</h2>
-                
-                <h3>Sprint 1: Project Planning</h3>
-                <p>We mapped out our approach and met with the original development team to understand their codebase. Our goal: expand the existing system without breaking its structure.</p>
-                
+        <!-- The Process -->
+        <section>
+            <div class="content-wrapper">
+                <h2 class="section-header">The Process (Sprints Overview)</h2>
+            
+                <h3 class="section-title">Sprint 1: Project Planning</h3>
+                <p class="problem-text">We mapped out our approach and met with the original development team to understand their codebase. Our goal: expand the existing system without breaking its structure.</p>
+            
                 <div class="challenge-box">
                     <h4>Key takeaway</h4>
                     <p>Collaboration early on helped avoid friction later.</p>
                 </div>
 
-                <h3>Sprint 2: Lo-Fi Wireframes + Feedback</h3>
-                <p>Using Balsamiq, we created our first draft low-fidelity wireframes and presented them for feedback. These initial wireframes focused on page layout and test input forms.</p>
+                <h3 class="section-title">Sprint 2: Lo-Fi Wireframes + Feedback</h3>
+                <p class="problem-text">Using Balsamiq, we created our first draft low-fidelity wireframes and presented them for feedback. These initial wireframes focused on page layout and test input forms.</p>
 
                 <div class="challenge-box">
                     <h4>Challenge</h4>
                     <p>Without audio files, we had to focus on layout, interaction, and architecture first.</p>
                 </div>
 
+                <h4 class="section-subtitle">Initial Wireframes</h4>
+                <!-- <div class="splide" id="initial-wireframes-carousel"> -->
                 <div class="initial-wireframes-carousel">
-                    <div class="splide">
+                    <div class="splide" id="initial-wireframes-carousel">
                         <div class="splide__track">
                             <div class="splide__list">
                                 <div class="splide__slide">
-                                    <img src="/assets/images/Initial_Ears_Training_Wireframes/initial_wireframes-images-0.jpg" alt="Initial landing page wireframe">
+                                    <img src="assets/images/initial_wireframes-images-0.jpg" alt="Initial landing page wireframe">
                                 </div>
                                 <div class="splide__slide">
-                                    <img src="/assets/images/Initial_Ears_Training_Wireframes/initial_wireframes-images-1.jpg" alt="RDDT Training test page">
+                                    <img src="assets/images/initial_wireframes-images-1.jpg" alt="RDDT Training test page">
                                 </div>
                                 <div class="splide__slide">
-                                    <img src="/assets/images/Initial_Ears_Training_Wireframes/initial_wireframes-images-2.jpg" alt="DNW Training test page">
+                                    <img src="assets/images/initial_wireframes-images-2.jpg" alt="DNW Training test page">
                                 </div>
                                 <div class="splide__slide">
-                                    <img src="/assets/images/Initial_Ears_Training_Wireframes/initial_wireframes-images-3.jpg" alt="Results page">
+                                    <img src="assets/images/initial_wireframes-images-3.jpg" alt="Results page">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <h4>Updated Wireframes</h4>
-                <p>After we were given feedback on our initial wireframes, we started our second draft. These wireframes focused on user-specific content, streamlined training flows, improved result visibility, and new administrative tools, such as a client edit page.</p>
+                <h4 class="section-subtitle">Updated Wireframes</h4>
+                <p class="problem-text">After we were given feedback on our initial wireframes, we started our second draft. These wireframes focused on user-specific content, streamlined training flows, improved result visibility, and new administrative tools, such as a client edit page.</p>
 
                 <div class="updated-wireframes-carousel">
-                    <div class="splide">
+                    <div class="splide" id="updated-wireframes-carousel">
                         <div class="splide__track">
                             <div class="splide__list">
                                 <div class="splide__slide">
-                                    <img src="/assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-0.jpg" alt="Client Account page">
+                                    <img src="assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-0.jpg" alt="Client Account page">
                                 </div>
                                 <div class="splide__slide">
-                                    <img src="/assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-2.jpg" alt="landing page for training">
+                                    <img src="assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-2.jpg" alt="landing page for training">
                                 </div>
                                 <div class="splide__slide">
-                                    <img src="/assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-3.jpg" alt="test results page">
+                                    <img src="assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-3.jpg" alt="test results page">
                                 </div>
                                 <div class="splide__slide">
-                                    <img src="/assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-4.jpg" alt="week one test results page">
+                                    <img src="assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-4.jpg" alt="week one test results page">
                                 </div>
                                 <div class="splide__slide">
-                                    <img src="/assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-5.jpg" alt="weeks 1-3 results page">
+                                    <img src="assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-5.jpg" alt="weeks 1-3 results page">
                                 </div>
                                 <div class="splide__slide">
-                                    <img src="/assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-6.jpg" alt="week one training test  page">
+                                    <img src="assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-6.jpg" alt="week one training test  page">
                                 </div>
                                 <div class="splide__slide">
-                                    <img src="/assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-10.jpg" alt="all weeks test results page">
+                                    <img src="assets/images/Updated_Ears_Training_Wireframes/Updated wireframes-images-10.jpg" alt="all weeks test results page">
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
 
                 <!-- <div class="project-image">
                     <img src="assets/images/ears-wireframes.jpg" alt="Lo-fi wireframes">
@@ -145,34 +175,39 @@
 
 
 
-                <h3>Sprint 3: Development Begins</h3>
-                <p>With audio files finally available and wireframes approved, I built the Week 1 training pages. I focused on ensuring the pages were functional and visually consistent with the original site's style guide.</p>
+                    <h3 class="section-title">Sprint 3: Development Begins</h3>
+                    <p class="problem-text">With audio files finally available and wireframes approved, I built the Week 1 training pages. I focused on ensuring the pages were functional and visually consistent with the original site's style guide.</p>
                 
-                <div class="key-points">
-                    <ul>
-                        <li><strong>My contribution:</strong> Web page development + interaction functionality</li>
-                        <li><strong>Consistency goal:</strong> Reuse visual language from the original site to avoid user confusion.</li>
-                    </ul>
-                </div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>My contribution:</strong> Web page development + interaction functionality</li>
+                            <li><strong>Consistency goal:</strong> Reuse visual language from the original site to avoid user confusion.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="challenge-box">
+                        <h4>Challenge</h4>
+                        <p>One of the algorithms for the RDDT tests was giving incorrect results. After some digging, I realized it was a calculation bug—not a logic issue. I corrected the math and got the test running correctly.</p>
+                    </div>
                 
-                <div class="challenge-box">
-                    <h4>Challenge</h4>
-                    <p>One of the algorithms for the RDDT tests was giving incorrect results. After some digging, I realized it was a calculation bug—not a logic issue. I corrected the math and got the test running correctly.</p>
-                </div>
-                
-                <div class="project-image">
-                    <img src="assets/images/training-page.png" alt="Training page screenshot">
-                    <p class="caption">Completed training page interface</p>
-                </div>
+                    <div class="ideas-process">
+                        <img src="assets/images/training-page.png" alt="Training page screenshot">
+                        <p class="caption">Completed training page interface</p>
+                    </div>
 
-                <h3>Sprint 4: Final Pages + Polish</h3>
-                <p>With an extended sprint, we added all remaining training pages and core functionality like result tracking. Though we initially used temporary audio files, we later updated the site once we received the final versions.</p>
+                    <h3 class="section-title">Sprint 4: Final Pages + Polish</h3>
+                    <p class="problem-text">With an extended sprint, we added all remaining training pages and core functionality like result tracking. Though we initially used temporary audio files, we later updated the site once we received the final versions.</p>
                 
-                <div class="key-points">
-                    <ul>
-                        <li><strong>New features added:</strong> Results landing page</li>
-                        <li><strong>New features added:</strong> Test score saving functionality</li>
-                    </ul>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>New features added:</strong> Results landing page</li>
+                            <li><strong>New features added:</strong> Test score saving functionality</li>
+                        </ul>
+                    </div>
+
+                    <div class="ideas-process">
+                        <img src="assets/images/results-page.png">
+                    </div>
                 </div>
             </section>
 
@@ -180,22 +215,28 @@
 
             <!-- Key Challenges -->
             <section>
-                <h2>Key Challenges + Solutions</h2>
-                <div class="key-points">
-                    <ul>
-                        <li><strong>Missing assets early on:</strong> We adjusted timelines and prioritized wireframing.</li>
-                        <li><strong>Buggy scoring algorithm:</strong> Fixed a tricky calculation issue causing inaccurate results.</li>
-                        <li><strong>Team coordination:</strong> Balancing updates with the original development team's expectations meant a lot of alignment and double-checking.</li>
-                    </ul>
+                <div class="content-wrapper">
+                    <h2 class="section-title">Key Challenges + Solutions</h2>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Missing assets early on:</strong> We adjusted timelines and prioritized wireframing.</li>
+                            <li><strong>Buggy scoring algorithm:</strong> Fixed a tricky calculation issue causing inaccurate results.</li>
+                            <li><strong>Team coordination:</strong> Balancing updates with the original development team's expectations meant a lot of alignment and double-checking.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
             <!-- Outcome -->
             <section>
-                <h2>Outcome & Learnings</h2>
-                <p>The training platform is now live and being used to help users improve auditory processing through structured, weekly exercises. I learned how to build within an existing system, how to communicate design intent across dev teams, and how to debug under pressure when core features aren't working.</p>
+                <div class="content-wrapper">
+                    <h3 class="section-header">Outcome & Learnings</h3>
+                    <div class="reflection-card">
+                       <h3>From Prototype to Production</h3>
+                       <p>The training platform is now live and being used to help users improve auditory processing through structured, weekly exercises. I learned how to build within an existing system, how to communicate design intent across development teams, and how to debug under pressure when core features aren't working.</p> 
+                    </div>
+                </div>
             </section>
-        </div>
 
         <!-- Footer -->
         <footer class="site-footer">
@@ -224,9 +265,31 @@
         <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                new Splide('.splide').mount();
+                document.querySelectorAll('.splide').forEach(function (el) {
+                    new Splide(el).mount();
+                });
             });
         </script>
+
+        <!-- <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new Splide('.initial-wireframes-carousel', {
+                    type: 'slide',
+                    perPage: 1,
+                    perMove: 1,
+                    gap: '2rem',
+                    arrows: false,
+                    pagination: false,
+                    breakpoints: {
+                    768: {
+                        perPage: 1,
+                        arrows: true
+                    }
+                    }
+                }).mount();
+            });
+        </script> -->
+
     </body>
 </html>
 
