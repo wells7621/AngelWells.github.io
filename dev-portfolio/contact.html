@@ -15,32 +15,50 @@
 
         <!-- Animate CSS CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.body.setAttribute("data-loaded", "true");
+            });
+        </script>
         
     </head>
 
-    <body class="contact-page">
+    <body class="contact-page" data-loaded="false">
         <!-- navbar -->
         <nav>
-            <!-- <a href="index.html">
-                <img src="assets/images/site-logo.png" alt="Logo" class="logo" />
-            </a> -->
 
             <a href="index.html" class="nav-link">Angel Wells</a>
-            <ul class="navigation">
+
+            <!-- linkedin icon -->
+            <div class="nav-right">
+
+                <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                        <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
+                    </svg>
+                </a>
+
+                <!-- hamburger menu -->
+                <button class="hamburger-menu" id="hamburger">
+                    <img src="assets/images/Menu.svg" alt="Menu" class="hamburger-icon">
+                    <img src="assets/images/Close_round.svg" alt="Close Menu" class="close-icon">
+                </button>
+            </div>
+
+            <!-- nav links -->
+            <ul class="navigation" id="navigation">
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <!-- <li><a href="#skills" class="nav-link">Skills</a></li> -->
                 <li><a href="work.html" class="nav-link">Projects</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                            <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
+                        </svg>
+                    </a>
+                </li>
             </ul>
-            <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
-                    <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
-                </svg>
-            </a>
-            <!-- <button class="burger-menu" id="burger-menu">
-                <ion-icon class="bars" name="menu-outline"></ion-icon>
-            </button> -->
+
         </nav>
 
         <!-- contact form -->
@@ -96,6 +114,31 @@
             // updates year
             document.getElementById('current-year').textContent = new Date().getFullYear();
         </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.body.setAttribute('data-loaded', 'true');
+
+                const hamburger = document.getElementById('hamburger');
+                const nav = document.getElementById('navigation');
+
+                if (hamburger && nav) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    nav.classList.toggle('active');
+                    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+                });
+
+                document.querySelectorAll('.navigation a').forEach(link => {
+                    link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.style.overflow = '';
+                    });
+                });
+                }
+            });
+         </script>
 
     </body>
 </html>

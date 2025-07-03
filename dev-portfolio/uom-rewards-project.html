@@ -19,10 +19,15 @@
         <!-- scroll reveal effect -->
         <script src="https://unpkg.com/scrollreveal"></script>
 
-        <title>Angel Wells | Web Developer</title>
+        <title>UOM Rewards | Angel Wells</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.body.setAttribute("data-loaded", "true");
+            });
+        </script>
     </head>
 
-    <body>
+    <body data-loaded="false">
         <!-- navbar -->
         <nav>
             <!-- <a href="index.html">
@@ -30,20 +35,36 @@
             </a> -->
 
             <a href="index.html" class="nav-link">Angel Wells</a>
-            <ul class="navigation">
+
+            <!-- linkedin icon -->
+            <div class="nav-right">
+
+                <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                        <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
+                    </svg>
+                </a>
+
+                <!-- hamburger menu -->
+                <button class="hamburger-menu" id="hamburger">
+                    <img src="assets/images/Menu.svg" alt="Menu" class="hamburger-icon">
+                    <img src="assets/images/Close_round.svg" alt="Close Menu" class="close-icon">
+                </button>
+            </div>
+
+            <!-- nav links -->
+            <ul class="navigation" id="navigation">
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <!-- <li><a href="#skills" class="nav-link">Skills</a></li> -->
-                <li><a href="index.html" class="nav-link">Projects</a></li>
+                <li><a href="work.html" class="nav-link">Projects</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                            <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
+                        </svg>
+                    </a>
+                </li>
             </ul>
-            <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
-                    <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
-                </svg>
-            </a>
-            <!-- <button class="burger-menu" id="burger-menu">
-                <ion-icon class="bars" name="menu-outline"></ion-icon>
-            </button> -->
         </nav>
 
         <div class="landing-image">
@@ -82,20 +103,46 @@
         </section>
 
 
-        <section>
+        <!-- <section>
             <div class="content-wrapper">
                 <h4 class="section-subtitle">The solution</h4>
-                <h3 class="section-title">Campus activities + real rewards = motivation, productivity, and connection</h3>
-            <!-- or put recorded prototype video -->
+                <h3 class="section-title">Campus activities + real rewards = motivation, productivity, and connection</h3> -->
+            <!-- recorded prototype video -->
+                <!-- <div class="video-mockup">
+                    <video autoplay loop muted playsinline width="100%">
+                        <source src="assets/videos/UOM_Rewards_Walkthrough.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div> -->
+                
             <!-- Figma interactive prototype -->
-                <div class="prototype-wrapper">
+                <!-- <div class="prototype-wrapper">
                     <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/1nwB0BKllb7QoCHevu6EuX/Auntie-Anne-s-team-library?embed-host=share" allowfullscreen></iframe>
                     <p class="caption">Final Prototype (click to explore)</p>
-                </div>
+                </div> 
             </div>
-        </section>
+        </section> -->
+
+        <!-- <section class="mockup-section"> -->
+        <div class="content-wrapper">
+            <h2 class="section-subtitle">Solution</h2>
+            <h3 class="section-title">
+                Campus activities + real rewards = motivation, productivity, and connection
+            </h3>
+
+            <div class="mockup-wrapper">
+                <video autoplay loop muted playsinline class="video-mockup">
+                    <source
+                        src="assets/videos/UOM_Rewards_Walkthrough.mov"
+                        type="video/mp4"/>
+                        Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
 
             <!-- Success metrics -->
+        <div class="content-wrapper">
             <div class="metrics-grid">
                 <div class="metric">
                     <span class="metric-value">> 50%</span>
@@ -106,53 +153,59 @@
                     <span class="metric-label">Testers loved the idea of being rewarded for being productive.</span>
                 </div>
             </div>
+        </div>
 
-            <section>
-                <div class="content-wrapper">
-                    <h2>How did we get to UOM Rewards?</h2>
+        <section>
+            <div class="content-wrapper">
 
-                    <!-- Process -->
-                    <div class="design-process-section">
-                        <span class="steps">Research → Synthesis → Ideation → Prototyping → Testing</span>
-                    </div>
+                <!-- Process -->
+                <h2 class="section-title">How did we get to UOM Rewards?</h2>
+                <div class="design-process-section">
+                    <span class="steps">Research → Synthesis → Ideation → Prototyping → Testing</span>
+                </div>
 
-                    <div class="research-process-section">
-                        <p class="problem-text">We interviewed six University of Memphis students to gauge the core cause of their problem. We recruited different types of students from club members, transfer students, and ex-club members. From there, we synthesized these interviews into three personas.</p>
-                    </div>
+                <div class="research-process-section">
+                    <p class="problem-text">We interviewed six University of Memphis students to gauge the core cause of their problem. We recruited different types of students from club members, transfer students, and ex-club members. From there, we synthesized these interviews into three personas.</p>
+                </div>
 
                 <!-- Personas -->
-                <div class="persona-section">
-                    <div>
-                        <h3>The Club Member,<br>
-                            The Transfer Student,<br>
-                            and The Ex-Club Member
+                <section class="persona-section">
+                    <div class="persona-intro">
+                        <h3 class="persona-title">
+                        The Club Member,<br>
+                        The Transfer Student,<br>
+                        and The Ex-Club Member
                         </h3>
-                        <p><span class="persona-highlight">The Club Member</span> is looking for a way to better manage her time while also encouraging other students to join her club.</p>
-                        <p><span class="persona-highlight">The Transfer Student</span> is new on campus and is looking to make some new friends and become more involved on campus.</p>
-                        <p><span class="persona-highlight">The Ex-Club Member</span> is looking for an easier way to find campus events that aligns with their busy schedule and connect with some friends--old and new.</p>
+                        <div class="persona-description">
+                            <p><span class="persona-highlight club-member">The Club Member</span> is looking for a way to better manage her time while also encouraging other students to join her club.</p>
+                            <p><span class="persona-highlight transfer-student">The Transfer Student</span> is new on campus and is looking to make some new friends and become more involved on campus.</p>
+                            <p><span class="persona-highlight ex-member">The Ex-Club Member</span> is looking for an easier way to find campus events that aligns with their busy schedule and connect with some friends--old and new.</p>
+                        </div>
                     </div>
-                </div>
+                 </section>
             </div>
         </section>
             
+        <section class="content-wrapper">
             <div class="personas-carousel">
                 <div class="splide">
                     <div class="splide__track">
                         <div class="splide__list">
                             <div class="splide__slide">
-                                <img src="/assets/images/rachel-persona.svg" alt="Club Member Persona">
+                                <img src="assets/images/rachel-persona.svg" alt="Club Member Persona">
+                                
                             </div>
                             <div class="splide__slide">
-                                <img src="/assets/images/sharon-persona.svg" alt="Transfer Student Persona">
+                                <img src="assets/images/sharon-persona.svg" alt="Transfer Student Persona">
                             </div>
                             <div class="splide__slide">
-                                <img src="/assets/images/chris-persona.svg" alt="Ex-Club Member Persona">
+                                <img src="assets/images/chris-persona.svg" alt="Ex-Club Member Persona">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </section>
             
         <section>
             <div class="content-wrapper">
@@ -161,14 +214,35 @@
 
                 <div class="ideas-process">
                     <img src="assets/images/user-story-map-1.png", alt="User story map">
+                    <p class="caption">User Story Map</p>
                 </div>
             </div>
         </section>
 
+        <section>
+            <div class="content-wrapper">
+                <h3 class="section-title">Prototyping & Testing</h3>
+                <p class="problem-text">
+                    For the prototyping and testing phase of UOM Rewards, we began by creating low-fidelity wireframes using Balsamiq to quickly map out the structure and layout of the interface. These early designs were then reviewed through heuristic evaluations conducted by our peers, allowing us to identify usability issues and refine the design. Based on the feedback, we iterated on the concept and developed the final interactive prototype in Figma, which represents a more polished and functional version of UOM Rewards.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-wrapper">
+            <h2 class="section-subtitle">Interactive Prototype</h2>
+            <h3 class="section-title">UOM Rewards Demo</h3>
+
+            <div class="mockup-wrapper">
+                <iframe class="figma-embed" src="https://embed.figma.com/proto/1nwB0BKllb7QoCHevu6EuX/Auntie-Anne-s-team-library?scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=2445-1413&starting-point-node-id=2445%3A1413&embed-host=share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <hr class="divider">
+
         <!-- What I learned section -->
         <section>
             <div class="content-wrapper">
-                <h3 class="section-header">Key Learnings</h3>
+                <!-- <h3 class="section-header">Key Learnings</h3> -->
                 <h4 class="section-title">What We Would Improve</h4>
                 <div class="reflection-card">
                     <h3>We could've explored adding more social features to the app.</h3>
@@ -179,6 +253,46 @@
                 <div class="reflection-card">
                     <h3>Our rewards system could've been more clear.</h3>
                     <p>Some users were actually unclear about the rewards process during testing. Now that I have more design knowledge, I would add a point system instead of a progress bar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="more-projects">
+            <div class="more-projects-header">
+                <h4>Thanks for reading</h4>
+                <h2>Check out more <em>Projects</em></h2>
+            </div>
+
+            <div class="more-projects-grid">
+                <!-- ears project -->
+                <div class="more-project-item">
+                    <a href="ears-project.html" class="more-project-card">
+                        <div class="more-project-image">
+                            <img src="assets/images/ears-home-page-mockup.png" alt="audio dichotics project">
+                        </div>
+                    </a>
+                    <div class="more-project-content">
+                        <h3 class="more-project-title">Audio Dichotics</h3>
+                        <div class="more-project-tags">
+                            <span class="more-project-tag">Web Development</span>
+                        </div>    
+                    </div>
+                </div>
+
+                <!-- umrf ventures work -->
+                <div class="more-project-item">
+                    <a href="umrf-ventures-project.html" class="more-project-card">
+                        <div class="more-project-image">
+                            <img src="assets/images/Home Page Mockup.png" alt="UMRF Ventures, Inc. work"> 
+                        </div>
+                    </a>
+                    <div class="more-project-content">
+                        <h3 class="more-project-title">UMRF Ventures, Inc.</h3>
+                        <div class="more-project-tags">
+                            <span class="more-project-tag">Web Development</span>
+                            <span class="more-project-tag">UI/UX Design</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -214,16 +328,58 @@
             });
         </script>
 
+        <!-- Scripts: shared across all pages -->
         <script>
-            ScrollReveal().reveal('.subtitle', 'next-steps', {
-                distance: '40px',
-                duration: 1000,
-                easing: 'ease-in-out',
-                origin: 'bottom',
-                interval: 200,
-                reset: false // change to true if you want them to re-animate every time you scroll
-            });
+            document.addEventListener('DOMContentLoaded', function () {
+            // Set data-loaded
+            document.body.setAttribute('data-loaded', 'true');
 
+            // Mobile Nav Functionality
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('navigation');
+
+                if (hamburger && nav) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    nav.classList.toggle('active');
+                    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+                });
+
+                document.querySelectorAll('.navigation a').forEach(link => {
+                    link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.style.overflow = '';
+                    });
+                });
+            }
+
+                // Scroll Reveal Animations 
+                if (typeof ScrollReveal !== 'undefined') {
+                    ScrollReveal().reveal('.section-title, .section-subtitle', {
+                        distance: '30px',
+                        duration: 800,
+                        easing: 'ease',
+                        origin: 'bottom',
+                        interval: 100,
+                        /* reset: false */
+                    });
+
+                    ScrollReveal().reveal('.mockup-wrapper, .persona-intro, .metric,.reflection-card, .more-projects', {
+                        distance: '40px',
+                        duration: 1000,
+                        easing: 'ease-in-out',
+                        origin: 'bottom',
+                        interval: 200
+                    });
+
+                    ScrollReveal().reveal('.splide', {
+                        distance: '20px',
+                        duration: 700,
+                        origin: 'bottom'
+                    });
+                }
+            });
         </script>
 
     </body>

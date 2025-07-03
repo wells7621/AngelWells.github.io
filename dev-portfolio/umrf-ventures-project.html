@@ -19,9 +19,15 @@
         <script src="https://unpkg.com/scrollreveal"></script>
 
         <title>UMRF Ventures Website Redesign | Angel Wells</title>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.body.setAttribute("data-loaded", "true");
+            });
+        </script>
     </head>
 
-    <body>
+    <body data-loaded="false">
         <!-- navbar -->
         <nav>
             <!-- <a href="index.html">
@@ -29,20 +35,37 @@
             </a> -->
 
             <a href="index.html" class="nav-link">Angel Wells</a>
-            <ul class="navigation">
+
+            <!-- linkedin icon -->
+            <div class="nav-right">
+
+                <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                        <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
+                    </svg>
+                </a>
+
+                <!-- hamburger menu -->
+                <button class="hamburger-menu" id="hamburger">
+                    <img src="assets/images/Menu.svg" alt="Menu" class="hamburger-icon">
+                    <img src="assets/images/Close_round.svg" alt="Close Menu" class="close-icon">
+                </button>
+            </div>
+
+            <!-- nav links -->
+            <ul class="navigation" id="navigation">
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <!-- <li><a href="#skills" class="nav-link">Skills</a></li> -->
                 <li><a href="work.html" class="nav-link">Projects</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                            <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
+                        </svg>
+                    </a>
+                </li>
             </ul>
-            <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
-                    <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
-                </svg>
-            </a>
-            <!-- <button class="burger-menu" id="burger-menu">
-                <ion-icon class="bars" name="menu-outline"></ion-icon>
-            </button> -->
+
         </nav>
 
         <div class="landing-image umrf-hero">
@@ -87,22 +110,24 @@
         <section>
             <!-- <div class="value-added-section"> -->
             <div class="content-wrapper">
-                <h2 class="value-added-heading">How I added value</h2>
-                <p class="value-added-text">
+                <h2 class="section-title">How I added value</h2>
+                <p class="problem-text">
                     While reviewing key pages, I identified that the site lacked consistency in mobile responsiveness and accessibility standards. Some elements extended beyond the viewport, color contrast didn't meet accessibility guidelines, and the visual hierarchy made it hard to scan on smaller screens, which impacts usability, visibility and SEO.
                 </p>
             </div>
         </section>
 
+        <hr class="divider">
+
         <!-- <section class="problem-section"> -->
         <section>
             <div class="content-wrapper">
-                <hr class="section-divider">
+                <!-- <hr class="section-divider"> -->
 
                 <div class="section-header">
-                    <h4 class="section-subtitle">Problem</h4>
+                    <h2 class="section-subtitle">Problem</h2>
                     <h2 class="section-title">Improving Usability and Accessibility Across Web and Mobile</h2>
-                    <h3 class="problem-subheader">What I Noticed</h3>
+                    <!-- <h3 class="problem-subheader">What I Noticed</h3> -->
                 </div>    
                 <p class="problem-text">
                     I was assigned to improve the "Our Impact" page as part of UMRF Ventures' broader initiative to modernize their website. While the page layout was structurally sound, I noticed key usability issues across both desktop and mobile, such as low text color contrast that didn't meet WCAG standards, poor visual hierarchy, and oversized components that pushed important content below the fold. These design flaws impacted the overall accessibility, responsiveness, and visibility of the site, potentially hurting SEO performance.
@@ -114,7 +139,7 @@
         <section>
             <div class="content-wrapper">
                 <div class="section-header">
-                    <h4 class="section-subtitle">Solution</h4>
+                    <h2 class="section-subtitle">Solution</h2>
                     <h2 class="section-title">Collaborating to Refine the Experience</h2>
                 </div>
                 
@@ -125,7 +150,7 @@
         <!-- <section class="ui-redesign-section"> -->
         <section>
             <div class="content-wrapper">
-                <h4 class="section-subtitle">UI Redesign</h4>
+                <h2 class="section-subtitle">UI Redesign</h2>
                 
                 <!-- Carousel Section -->
                 <div class="redesign-item">
@@ -197,27 +222,46 @@
                     </div>
                     
                     <div class="image-comparison">
-                        <h3 class="comparison-subheader">Original Design</h3>
-
-                        <h3 class="comparison-subheader">First Attempt</h3>
-                        <!-- <img src="assets/images/community-carousel-attempt.jpg" alt="Initial redesign attempt"> -->
+                        <!-- <h3 class="comparison-subheader">Original Design</h3> -->
+                        <h3 class="comparison-subheader">Mobile</h3>
+                        <img src="assets/images/Before_Comm_Caro_Mobile.png" alt="Original community carousel for mobile">
+                        
+                        <h3 class="comparison-subheader">Web/Desktop</h3>
+                        <img src="assets/images/Before_Community_Carousel_Web.png" alt="Original community carousel for desktop">
                     </div>
 
-                    <p class="problem-text">I applied the original carousel fix, but it didn't translate well due to the extra interactive elements. After exploring examples from other websites and design systems, I proposed a new approach: a hero-style carousel. It balances visual appeal with mobile usability while maintaining content hierarchy.</p>
+                    <p class="problem-text">I applied the original carousel fix, but it didn't translate well due to the extra interactive elements. The visual hierarchy was still off on mobile and the carousel wasn't optimized for mobile.</p>
 
                     <div class="image-comparison">
-                        <h3 class="comparison-subheader">Final Solution</h3>
-                        <!-- <img src="assets/images/community-carousel-final-mobile.jpg" alt="Final mobile carousel design">
-                        <img src="assets/images/community-carousel-final-desktop.jpg" alt="Final desktop carousel design"> -->
+                        <h3 class="comparison-subheader">Mobile</h3>
+                        <img src="assets/images/First_Design_Comm_Caro_Mobile.png" alt="First design of community carousel for mobile">
+
+                        <h3 class="comparison-subheader">Web/Desktop</h3>
+                        <img src="assets/images/First_Design_Comm_Caro_Web.png" alt="First design of community carousel for desktop">
+                    </div>
+
+                    <p class="problem-text">
+                        After exploring examples from other websites and design systems, I proposed a new approach: a hero-style carousel. It balances visual appeal with mobile usability while maintaining content hierarchy.
+                    </p>
+
+                    <div class="image-comparison">
+                        <!-- <h3 class="comparison-subheader">Final Solution</h3> -->
+                        <h3 class="comparison-subheader">Mobile</h3>
+                        <img src="assets/images/New_Comm_Caro_Mobile.png" alt="New design of community carousel for mobile">
+
+                        <h3 class="comparison-subheader">Web/Desktop</h3>
+                        <img src="assets/images/New_Comm_Caro_Web.png" alt="New design of community carousel for desktop">
                     </div>
                 </div>
             </div>
         </section>
 
+        <hr class="divider">
+
         <!-- What I learned section -->
         <section>
             <div class="content-wrapper">
-                <h2 class="section-header">Key Learnings & Opportunities</h2>
+                <h4 class="section-title">My Takeaways From This Project</h4>
 
                 <div class="reflection-card">
                     <h3>More Design Iteration</h3>
@@ -227,6 +271,45 @@
                 <div class="reflection-card">
                     <h3>Design System Exploration</h3>
                     <p>If time allowed, I would’ve explored creating a lightweight style guide or reusable component set, especially for typography and spacing scales.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="more-projects">
+            <div class="more-projects-header">
+                <h4>Thanks for reading</h4>
+                <h2>Check out more <em>Projects</em></h2>
+            </div>
+
+            <div class="more-projects-grid">
+                <!-- ears project -->
+                <div class="more-project-item">
+                    <a href="ears-project.html" class="more-project-card">
+                        <div class="more-project-image">
+                            <img src="assets/images/ears-home-page-mockup.png" alt="audio dichotics project">
+                        </div>
+                    </a>
+                    <div class="more-project-content">
+                        <h3 class="more-project-title">Audio Dichotics</h3>
+                        <div class="more-project-tags">
+                            <span class="more-project-tag">Web Development</span>
+                        </div>    
+                    </div>
+                </div>
+
+                <!-- uom rewards work -->
+                <div class="more-project-item">
+                    <a href="uom-rewards-project.html" class="more-project-card">
+                        <div class="more-project-image">
+                            <img src="assets/images/uom-rewards-mockup.png" alt="UOM Rewards project"> 
+                        </div>
+                    </a>
+                    <div class="more-project-content">
+                        <h3 class="more-project-title">UOM Rewards</h3>
+                        <div class="more-project-tags">
+                            <span class="more-project-tag">UI/UX Design</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -249,6 +332,54 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Scripts: shared across all pages -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            // Set data-loaded
+            document.body.setAttribute('data-loaded', 'true');
+
+            // Mobile Nav Functionality
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('navigation');
+
+                if (hamburger && nav) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    nav.classList.toggle('active');
+                    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+                });
+
+                document.querySelectorAll('.navigation a').forEach(link => {
+                    link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.style.overflow = '';
+                    });
+                });
+            }
+
+                // Scroll Reveal Animations
+                if (typeof ScrollReveal !== 'undefined') {
+                    ScrollReveal().reveal('.section-title, .section-subtitle', {
+                        distance: '30px',
+                        duration: 800,
+                        easing: 'ease',
+                        origin: 'bottom',
+                        interval: 100,
+                        /* reset: false */
+                    });
+
+                    ScrollReveal().reveal('.challenge-box, .reflection-card, .more-projects-grid', {
+                        distance: '40px',
+                        duration: 1000,
+                        easing: 'ease-in-out',
+                        origin: 'bottom',
+                        interval: 200
+                    }); 
+                }
+            });
+        </script>
     </body>
 </html>
     

@@ -15,8 +15,18 @@
 
             <!-- Animate CSS CDN -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+            <script src="https://unpkg.com/scrollreveal"></script>
+
+            <title>Audio Dichotics | Angel Wells</title>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    document.body.setAttribute("data-loaded", "true");
+                });
+            </script>
     </head>
-    <body>
+
+    <body data-loaded="false">
         <!-- navbar -->
         <nav>
             <!-- <a href="index.html">
@@ -24,20 +34,37 @@
             </a> -->
 
             <a href="index.html" class="nav-link">Angel Wells</a>
-            <ul class="navigation">
+
+            <!-- linkedin icon -->
+            <div class="nav-right">
+
+                <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                        <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
+                    </svg>
+                </a>
+
+                <!-- hamburger menu -->
+                <button class="hamburger-menu" id="hamburger">
+                    <img src="assets/images/Menu.svg" alt="Menu" class="hamburger-icon">
+                    <img src="assets/images/Close_round.svg" alt="Close Menu" class="close-icon">
+                </button>
+            </div>
+
+            <!-- nav links -->
+            <ul class="navigation" id="navigation">
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <!-- <li><a href="#skills" class="nav-link">Skills</a></li> -->
                 <li><a href="work.html" class="nav-link">Projects</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                            <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
+                        </svg>
+                    </a>
+                </li>
             </ul>
-            <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
-                    <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
-                </svg>
-            </a>
-            <!-- <button class="burger-menu" id="burger-menu">
-                <ion-icon class="bars" name="menu-outline"></ion-icon>
-            </button> -->
+
         </nav>
 
         <div class="landing-image umrf-hero">
@@ -84,7 +111,7 @@
         <!-- The Problem -->
         <section>
             <div class="content-wrapper">
-                <h2 class="section-title">The Problem</h2>
+                <h3 class="section-title">The Problem</h3>
                 <p class="problem-text">The original web tool needed to be expanded with additional auditory training content, but lacked a user-friendly UI and functional structure. Our task was to design and build new training pages, maintain visual consistency, and ensure everything worked smoothly across sessions.</p>
             </div>
         </section>
@@ -94,7 +121,7 @@
         <!-- The Process -->
         <section>
             <div class="content-wrapper">
-                <h2 class="section-header">The Process (Sprints Overview)</h2>
+                <h2 class="section-subtitle">The Process (Sprints Overview)</h2>
             
                 <h3 class="section-title">Sprint 1: Project Planning</h3>
                 <p class="problem-text">We mapped out our approach and met with the original development team to understand their codebase. Our goal: expand the existing system without breaking its structure.</p>
@@ -112,7 +139,7 @@
                     <p>Without audio files, we had to focus on layout, interaction, and architecture first.</p>
                 </div>
 
-                <h4 class="section-subtitle">Initial Wireframes</h4>
+                <h4 class="section-subtitle centered">Initial Wireframes</h4>
                 <!-- <div class="splide" id="initial-wireframes-carousel"> -->
                 <div class="initial-wireframes-carousel">
                     <div class="splide" id="initial-wireframes-carousel">
@@ -135,7 +162,7 @@
                     </div>
                 </div>
                 
-                <h4 class="section-subtitle">Updated Wireframes</h4>
+                <h4 class="section-subtitle centered">Updated Wireframes</h4>
                 <p class="problem-text">After we were given feedback on our initial wireframes, we started our second draft. These wireframes focused on user-specific content, streamlined training flows, improved result visibility, and new administrative tools, such as a client edit page.</p>
 
                 <div class="updated-wireframes-carousel">
@@ -192,7 +219,7 @@
                 
                     <div class="ideas-process">
                         <img src="assets/images/training-page.png" alt="Training page screenshot">
-                        <p class="caption">Completed training page interface</p>
+                        <p class="caption">Completed Training Page Interface</p>
                     </div>
 
                     <h3 class="section-title">Sprint 4: Final Pages + Polish</h3>
@@ -207,13 +234,14 @@
 
                     <div class="ideas-process">
                         <img src="assets/images/results-page.png">
+                        <p class="caption">Example of Training Results Table</p>
                     </div>
                 </div>
             </section>
 
             <hr class="divider">
 
-            <!-- Key Challenges -->
+            <!-- Key Challenges 
             <section>
                 <div class="content-wrapper">
                     <h2 class="section-title">Key Challenges + Solutions</h2>
@@ -225,18 +253,58 @@
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
             <!-- Outcome -->
             <section>
                 <div class="content-wrapper">
-                    <h3 class="section-header">Outcome & Learnings</h3>
+                    <h3 class="section-title">Outcome & Learnings</h3>
                     <div class="reflection-card">
                        <h3>From Prototype to Production</h3>
                        <p>The training platform is now live and being used to help users improve auditory processing through structured, weekly exercises. I learned how to build within an existing system, how to communicate design intent across development teams, and how to debug under pressure when core features aren't working.</p> 
                     </div>
                 </div>
             </section>
+
+            <section class="more-projects">
+            <div class="more-projects-header">
+                <h4>Thanks for reading</h4>
+                <h2>Check out more <em>Projects</em></h2>
+            </div>
+
+            <div class="more-projects-grid">
+                <!-- UOM Rewards project -->
+                <div class="more-project-item">
+                    <a href="uom-rewards-project.html" class="more-project-card">
+                        <div class="more-project-image">
+                            <img src="assets/images/uom-rewards-mockup.png" alt="uom rewards project">
+                        </div>
+                    </a>
+                    <div class="more-project-content">
+                        <h3 class="more-project-title">UOM Rewards</h3>
+                        <div class="more-project-tags">
+                            <span class="more-project-tag">UI/UX Design</span>
+                        </div>    
+                    </div>
+                </div>
+
+                <!-- umrf ventures work -->
+                <div class="more-project-item">
+                    <a href="umrf-ventures-project.html" class="more-project-card">
+                        <div class="more-project-image">
+                            <img src="assets/images/Home Page Mockup.png" alt="UMRF Ventures, Inc. work"> 
+                        </div>
+                    </a>
+                    <div class="more-project-content">
+                        <h3 class="more-project-title">UMRF Ventures, Inc.</h3>
+                        <div class="more-project-tags">
+                            <span class="more-project-tag">Web Development</span>
+                            <span class="more-project-tag">UI/UX Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Footer -->
         <footer class="site-footer">
@@ -269,6 +337,61 @@
                     new Splide(el).mount();
                 });
             });
+        </script>
+
+        <!-- Scripts: shared across all pages -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            // Set data-loaded
+            document.body.setAttribute('data-loaded', 'true');
+
+            // Mobile Nav Functionality
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('navigation');
+
+            if (hamburger && nav) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    nav.classList.toggle('active');
+                    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+                });
+
+                document.querySelectorAll('.navigation a').forEach(link => {
+                    link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.style.overflow = '';
+                    });
+                });
+            }
+
+            // Scroll Reveal Animations (optional)
+            if (typeof ScrollReveal !== 'undefined') {
+                ScrollReveal().reveal('.section-title, .section-subtitle', {
+                    distance: '30px',
+                    duration: 800,
+                    easing: 'ease',
+                    origin: 'bottom',
+                    interval: 100,
+                    /* reset: false */
+                });
+                
+                ScrollReveal().reveal('.challenge-box,.reflection-card .more-projects-grid', {
+                    distance: '40px',
+                    duration: 1000,
+                    easing: 'ease-in-out',
+                    origin: 'bottom',
+                    interval: 200,
+                    reset: false
+                });
+
+                ScrollReveal().reveal('.splide', {
+                    distance: '20px',
+                    duration: 700,
+                    origin: 'bottom'
+                });
+            }
+        });
         </script>
 
         <!-- <script>
