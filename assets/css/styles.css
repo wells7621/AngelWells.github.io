@@ -191,6 +191,10 @@ body[data-loaded="false"] .navigation {
     pointer-events: none !important;
 }
 
+body.home nav {
+  background: url("../images/gradient-background.svg");
+}
+
 .burger-menu { /*needs to be hidden on web version */
     color: var(--color-accent-primary);
     font-size: 2rem;
@@ -654,9 +658,11 @@ h4 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;*/
-   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+
+   /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
    background-size: 400% 400%;
-   animation: gradient 15s ease infinite;
+   animation: gradient 15s ease infinite; */
+   background: url("../images/gradient-background.svg");
 }
 
 @keyframes gradient {
@@ -674,7 +680,8 @@ h4 {
 .hero-text {
   max-width: 700px; /* 600px */
   /* color: #000; */
-  color: var(--color-text-inverse);
+  /* color: var(--color-text-inverse); */
+  color: var(--color-text-primary);
   /* padding: 10px; */
   padding: 10px 10px 10px 50px;
   font-family: var(--font-body);
@@ -685,7 +692,7 @@ h4 {
   font-family: var(--font-heading);
   font-size: 3.5rem; /* 2.5 */
   margin-bottom: 1rem;
-  color: var(--color-text-inverse);
+  color: var(--color-text-primary);
 }
 
 .hero-text p {
@@ -696,11 +703,11 @@ h4 {
 #rotating-word {
   font-weight: 500;
   font-style: italic;
-  color: var(--color-text-inverse);
+  color: var(--color-text-primary);
 }
 
 s {
-  color: var(--color-text-inverse);
+  color: var(--color-text-primary);
   text-decoration: line-through;
 }
 
