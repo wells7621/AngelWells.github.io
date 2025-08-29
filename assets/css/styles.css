@@ -1902,6 +1902,43 @@ p, .paragraph {
 }
 
 /* V */
+/* umrf site metric cards */
+.value-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.value-card {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1; 
+  min-width: 150px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.value-card__percentage {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent-tertiary); 
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.value-card__label {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary); /
+    text-transform: lowercase; 
+}
+
 .value-added-wrapper {
   /* padding: 3rem var(--mobile-padding) 1.5rem;
   max-width: var(--content-width);
@@ -2605,6 +2642,10 @@ p, .paragraph {
 
     .video-mockup {
         padding: 1rem 0.5rem 5rem 0.5rem;
+    }
+
+    .value-cards {
+        flex-direction: column; 
     }
 }
 
