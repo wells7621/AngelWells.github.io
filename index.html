@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- CSS styles -->
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Merriweather+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -33,7 +33,9 @@
                 <img src="assets/images/site-logo.png" alt="Logo" class="logo" />
             </a> -->
 
-            <a href="index.html" class="nav-link">Angel Wells</a>
+            <a href="index.html" class="logo" aria-label="Angel Wells Home">
+                <img src="assets/images/Logo.svg">
+            </a>
 
             <!-- linkedin icon -->
             <div class="nav-right">
@@ -69,15 +71,42 @@
         
         <!-- hero section -->
         <section class="hero">
-            <!-- <img src="assets/images/pp-original.jpg" alt="profile-pic" loading="lazy" class="pp-img animate__animated animate__zoomIn"/> -->
-            <!-- <img src="../images/Vector.png" alt="background-image" class="hero-blob" loading="lazy"> -->
-            
-            <div class="hero-text">
-                <h2><em>angel (n.)</em></h2>
-                <p>a designer—who also develops—that loves crafting accessible and engaging experiences everyone can enjoy</p>
-                <p>she also loves 
-                    <span class="dynamic-word" id="rotating-word">sweet tea</span>
+            <div class="hero-content">
+                <div class="hero-tag">angel (n)</div>  
+
+                <div class="desktop-hero">
+                    <h1 class="hero-description">
+                        a designer-developer shaping
+                        <span class="highlight-word">colorful</span>,
+                        <span class="highlight-word">accessible</span>, and
+                        <span class="highlight-word">impactful</span>
+                        experiences that connect people and spark action
+                    </h1>
+                </div>
+                
+                <div class="mobile-hero">
+                    <h1 class="hero-description">
+                        a designer-developer bridging the gap between
+                        <span class="highlight-word">creativity</span> and 
+                        <span class="highlight-word">accessibility</span>
+                    </h1>
+                </div>
+
+                <p class="hero-subtext">
+                    she also loves <span class="dynamic-word highlight-word" id="rotating-word">sweet tea</span>
                 </p>
+
+                <div class="current-role">
+                    <span class="role-highlight">currently</span>
+                    <span>Web Designer & Developer @ UMRF Ventures, Inc.</span>
+                </div>
+                    
+                <a href="#projects" class="view-work-button">
+                View My Work
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
             </div>    
         </section>
 
