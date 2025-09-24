@@ -199,9 +199,9 @@ body[data-loaded="false"] .navigation {
     pointer-events: none !important;
 }
 
-body.home nav {
+/* body.home nav {
   background: url("../images/gradient-background.svg");
-}
+} */
 
 .burger-menu { /*needs to be hidden on web version */
     color: var(--color-accent-primary);
