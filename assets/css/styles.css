@@ -2258,7 +2258,7 @@ img[alt="audio dichotics home page mockup"] {
 .value-card__percentage {
     display: block;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: var(--fw-medium);
     color: var(--color-accent-tertiary); 
     line-height: 1;
     margin-bottom: 0.5rem;
