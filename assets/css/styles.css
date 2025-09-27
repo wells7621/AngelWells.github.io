@@ -568,7 +568,7 @@ body[data-loaded="false"] .navigation {
   border-radius: 50px;
   font-weight: var(--fw-semibold);
   font-size: 1rem;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
   min-width: 140px;
   justify-content: center;
   /* border: 2px solid var(--color-accent-primary); */
@@ -577,8 +577,10 @@ body[data-loaded="false"] .navigation {
 .cta-button:hover {
   background-color: white;
   color: var(--color-accent-primary);
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
   border: 2px solid var(--color-accent-primary);
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
 }
 
 .cta-button svg {
@@ -869,7 +871,7 @@ h4 {
   padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: var(--fw-medium);
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 .view-work-button:hover {
@@ -878,6 +880,8 @@ h4 {
   color: var(--color-accent-primary);
   border-style: solid;
   border-color: var(--color-accent-primary);
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
 }
 
 .view-work-button svg {
@@ -1805,7 +1809,8 @@ p, .paragraph {
   overflow: hidden;
   border-radius: 12px;
   position: relative;
-  min-height: 300px;
+  /* min-height: 300px; */
+  min-height: 200px;
 }
 
 .project-image img {
@@ -2359,99 +2364,9 @@ ul {
     margin: 10px;
 }
 
-/* for mobile screens */
-@media (max-width: 480px) {
-    .contact-container {
-        padding: 3rem 1.5rem;
-    }
 
-    .contact-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .projects-container {
-        padding: 3rem 1.5rem;
-        gap: 2rem;
-    }
-
-    .project-container .project-image {
-        margin-bottom: 1.25rem;
-    }
-    
-    .projects-container .project-title {
-        font-size: 1.5rem;
-    }
-
-    .project-stats {
-        flex-direction: column;
-        /* align-items: flex-start; */
-        align-items: center;
-        gap: 1rem;
-    }
-    
-    .project-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .project-link {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .project-card {
-        padding: 1.5rem;
-    }
-    
-    .projects-container {
-        gap: 2rem;
-    }
-
-    .project-title {
-      font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 600px) {
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
-  }
-  
-  .footer-left, .footer-right {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 767px) {
-  .value-added-wrapper,
-  .problem-section .container,
-  .solution-content {
-      padding-left: var(--mobile-padding);
-      padding-right: var(--mobile-padding);
-  }
-
-  .project-page .metrics-grid.two-metrics {
-      grid-template-columns: 1fr;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-  }
-
-  .navigation {
-    padding: 2rem 1rem 1rem;
-  }
-
-  .navigation .linkedin-icon {
-      display: none; /* hide inside-nav version */
-  }
-
-  .nav-right .linkedin-icon {
-      display: inline-block;
-  }
-}
+/* for min-width: smallest to largest */
+/* Default: Mobile styles (no media query) */
 
 /* Responsive  (tablet) */
 @media (min-width: 768px) {
@@ -2757,6 +2672,244 @@ ul {
     } */
 }
 
+/* Tablet adjustments (768px-1024px) - keep side-by-side but adjust spacing */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .landing-image.umrf-hero img {
+        max-height: 70vh;
+    }
+
+    /* .value-added-wrapper,
+    .overview-grid {
+        padding: 0 calc(var(--mobile-padding) + 4rem);
+    } */
+
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Optional: Make the third card span full width if you have 3 metrics 
+    .metrics-grid .metric:nth-child(3) {
+        grid-column: span 2;
+        max-width: 50%; 
+        justify-self: center;
+    } */
+  
+    .project-card {
+        gap: 3rem; /* Slightly reduced gap */
+    }
+    .project-image {
+        flex: 0 0 45%; /* Prevent image from stretching */
+        min-width: 0;
+    }
+    .project-image img {
+        height: auto;
+        max-height: 300px;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-padding: 8rem;
+    --mobile-padding: 5rem;
+  }
+
+  .contact-container {
+    padding: 8rem 2rem;
+  }
+
+  /* .container {
+    padding: 0 3rem;
+  } */
+  
+  nav {
+    padding: 2rem var(--mobile-padding);
+  }
+  
+  .landing-image img {
+    max-height: 70vh;
+    /* object-fit: cover; */
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .project-page .metrics-grid.two-metrics {
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  .metric {
+    padding: 2rem;
+  }
+
+  .projects-container .project-image img {
+    min-height: 380px;
+  }
+  
+  .projects-container .project-title {
+    font-size: 2rem;
+  }
+  
+  .project-excerpt {
+    font-size: 1.1rem;
+  }
+
+  .project-header h1 {
+    padding: rem var(--desktop-padding);
+  }
+
+  .problem-section {
+    padding: 8rem 0;
+  }
+
+  .section-description {
+    padding: rem var(--desktop-padding);
+  }
+    
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .solution-section {
+    padding: 8rem 0;
+  }
+
+  .ui-redesign-section {
+    padding: 5rem 0;
+  }
+}
+
+/* For very large screens (Desktop) */
+@media (min-width: 1200px) {
+    .about-heading h1 {
+        font-size: 4rem;
+    }
+
+    .about-grid {
+        gap: 4rem;
+    }
+
+    .footer-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 var(--desktop-padding);
+    }
+}
+
+/* for max-width: largest to smallest */
+/* Default: Desktop styles (no media query) */
+
+@media (max-width: 1024px) {
+
+    :root {
+        --desktop-padding: 4rem;
+        --gap: 4rem; 
+    }
+
+    .project-card {
+        /* gap: 4rem;
+        margin: 40px; */
+        gap: 2rem;
+        padding: 2rem;
+    }
+    
+    .project-image img {
+        height: 400px; /* Restore original height */
+    }
+
+    .project-card,
+    .project-card:nth-child(even) {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    .project-image {
+        width: 100%;
+    }
+    
+    .project-image img {
+        /* height: 300px; */
+        height: auto;
+        max-height: 300px;
+        width: 100%;
+        object-fit: contain; 
+    }
+
+    .project-content {
+        width: 100%;
+    }
+
+    .project-categories {
+      margin-bottom: 1rem;
+    }
+    
+    /* Center only the category tag on mobile */
+    .project-category {
+        /* display: table; */
+        display: inline-block;
+        /* margin-left: 0;
+        margin-right: 0;
+        margin-right: auto; */
+        margin: 0;
+        padding: 0.35rem 0.8rem;
+    }
+
+    /* For projects with multiple categories */
+    .project-content span.project-category + span.project-category {
+        margin-left: 0.5rem; /* Add space between multiple categories */
+    } 
+    
+    /* Ensure project title text alignment matches other projects */
+    .project-content h3 {
+        text-align: left;
+    }
+    
+    /* Fix the last project's special layout 
+    .project-card:last-child .project-content {
+        text-align: left;
+    } */
+
+    .project-card:first-child .project-content {
+        text-align: left;
+    }
+
+    .project-title {
+      font-size: 1.6rem;
+    }
+
+    .project-description {
+      font-size: 1rem;
+    }
+
+    .metric-label {
+      font-size: 1.1rem;
+    }
+
+    .value-added-section {
+        padding-right: calc(var(--gap) / 2); 
+    }
+}
+
+ /* Small Tablets - still side by side */
+@media (max-width: 900px) {
+    .project-card {
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .project-title {
+        font-size: 1.4rem;
+    }
+    
+    .project-image {
+        min-height: 250px;
+    }
+}
+
 /* Maintain side-by-side layout down to 768px */
 @media (max-width: 768px) {
     .body {
@@ -3015,237 +3168,138 @@ ul {
     }
 }
 
- /* Small Tablets - still side by side */
-@media (max-width: 900px) {
-    .project-card {
-        gap: 1.5rem;
-        padding: 1.5rem;
-    }
-    
-    .project-title {
-        font-size: 1.4rem;
-    }
-    
-    .project-image {
-        min-height: 250px;
-    }
-}
-
-/* Tablet adjustments (768px-1024px) - keep side-by-side but adjust spacing */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .landing-image.umrf-hero img {
-        max-height: 70vh;
-    }
-
-    /* .value-added-wrapper,
-    .overview-grid {
-        padding: 0 calc(var(--mobile-padding) + 4rem);
-    } */
-
-    .metrics-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* Optional: Make the third card span full width if you have 3 metrics 
-    .metrics-grid .metric:nth-child(3) {
-        grid-column: span 2;
-        max-width: 50%; 
-        justify-self: center;
-    } */
-  
-    .project-card {
-        gap: 3rem; /* Slightly reduced gap */
-    }
-    .project-image {
-        flex: 0 0 45%; /* Prevent image from stretching */
-        min-width: 0;
-    }
-    .project-image img {
-        height: auto;
-        max-height: 300px;
-        width: 100%;
-        object-fit: contain;
-    }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --section-padding: 8rem;
-    --mobile-padding: 5rem;
-  }
-
-  .contact-container {
-    padding: 8rem 2rem;
-  }
-
-  /* .container {
-    padding: 0 3rem;
-  } */
-  
-  nav {
-    padding: 2rem var(--mobile-padding);
-  }
-  
-  .landing-image img {
-    max-height: 70vh;
-    /* object-fit: cover; */
-  }
-
-  .metrics-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+@media (max-width: 767px) {
+  .value-added-wrapper,
+  .problem-section .container,
+  .solution-content {
+      padding-left: var(--mobile-padding);
+      padding-right: var(--mobile-padding);
   }
 
   .project-page .metrics-grid.two-metrics {
-      grid-template-columns: repeat(2, minmax(300px, 1fr));
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
   }
 
-  .metric {
-    padding: 2rem;
+  .navigation {
+    padding: 2rem 1rem 1rem;
   }
 
-  .projects-container .project-image img {
-    min-height: 380px;
-  }
-  
-  .projects-container .project-title {
-    font-size: 2rem;
-  }
-  
-  .project-excerpt {
-    font-size: 1.1rem;
+  .navigation .linkedin-icon {
+      display: none; /* hide inside-nav version */
   }
 
-  .project-header h1 {
-    padding: rem var(--desktop-padding);
-  }
-
-  .problem-section {
-    padding: 8rem 0;
-  }
-
-  .section-description {
-    padding: rem var(--desktop-padding);
-  }
-    
-  .section-title {
-    font-size: 3rem;
-  }
-
-  .solution-section {
-    padding: 8rem 0;
-  }
-
-  .ui-redesign-section {
-    padding: 5rem 0;
+  .nav-right .linkedin-icon {
+      display: inline-block;
   }
 }
 
-/* For very large screens (Desktop) */
-@media (min-width: 1200px) {
-    .about-heading h1 {
-        font-size: 4rem;
-    }
-
-    .about-grid {
-        gap: 4rem;
-    }
-
-    .footer-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 var(--desktop-padding);
-    }
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .footer-left, .footer-right {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
-@media (max-width: 1024px) {
-
-    :root {
-        --desktop-padding: 4rem;
-        --gap: 4rem; 
+/* for mobile screens */
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 3rem 1.5rem;
     }
 
-    .project-card {
-        /* gap: 4rem;
-        margin: 40px; */
-        gap: 2rem;
-        padding: 2rem;
-    }
-    
-    .project-image img {
-        height: 400px; /* Restore original height */
+    .contact-content h1 {
+        font-size: 2.5rem;
     }
 
-    .project-card,
-    .project-card:nth-child(even) {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: flex-start;
+    .projects-container {
+        /* padding: 3rem 1.5rem;
+        gap: 2rem; */
+        padding: 2rem 1rem;
+        gap: 2.5rem;
     }
+
+    /* .project-container .project-image {
+        margin-bottom: 1.25rem;
+    } */
 
     .project-image {
-        width: 100%;
-    }
-    
-    .project-image img {
-        /* height: 300px; */
-        height: auto;
-        max-height: 300px;
-        width: 100%;
-        object-fit: contain; 
+        min-height: 200px; /* Reduced from 300px */
+        margin-bottom: 0; /* Remove extra gap */
+        flex: none; /* Prevent flex growing */
     }
 
-    .project-content {
-        width: 100%;
+    .project-image img {
+        height: 200px; /* Fixed height for consistency */
+        object-fit: cover;
+    }
+    
+    .projects-container .project-title {
+        font-size: 1.5rem;
     }
 
     .project-categories {
-      margin-bottom: 1rem;
+        justify-content: flex-start; /* Left align */
+        gap: 0.375rem; /* Slightly smaller gap */
+        margin-bottom: 1rem;
     }
-    
-    /* Center only the category tag on mobile */
+
     .project-category {
-        /* display: table; */
-        display: inline-block;
-        /* margin-left: 0;
-        margin-right: 0;
-        margin-right: auto; */
-        margin: 0;
-        padding: 0.35rem 0.8rem;
+        font-size: 0.65rem; /* Slightly smaller */
+        padding: 0.25rem 0.5rem; /* Adjusted padding */
+        margin-bottom: 0; /* Remove individual margin */
+        margin-left: 0 !important; /* Force remove left margin */
+        align-self: flex-start; /* Ensure left alignment */
     }
 
-    /* For projects with multiple categories */
+    /* Remove the + margin specifically for mobile */
     .project-content span.project-category + span.project-category {
-        margin-left: 0.5rem; /* Add space between multiple categories */
-    } 
-    
-    /* Ensure project title text alignment matches other projects */
-    .project-content h3 {
-        text-align: left;
+        margin-left: 0.375rem !important;
+    }
+
+
+    .project-header h1 {
+      line-height: 1;
+    }
+
+    .project-stats {
+        flex-direction: column;
+        /* align-items: flex-start; */
+        align-items: center;
+        gap: 1rem;
     }
     
-    /* Fix the last project's special layout 
-    .project-card:last-child .project-content {
-        text-align: left;
-    } */
-
-    .project-card:first-child .project-content {
-        text-align: left;
+    .project-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .project-link {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .project-card {
+        /* padding: 1.5rem; */
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .projects-container {
+        gap: 2rem;
     }
 
     .project-title {
-      font-size: 1.6rem;
-    }
-
-    .project-description {
-      font-size: 1rem;
-    }
-
-    .metric-label {
-      font-size: 1.1rem;
-    }
-
-    .value-added-section {
-        padding-right: calc(var(--gap) / 2); 
+      font-size: 1.5rem;
     }
 }
+
