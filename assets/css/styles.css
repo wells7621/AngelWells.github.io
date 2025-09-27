@@ -199,9 +199,9 @@ body[data-loaded="false"] .navigation {
     pointer-events: none !important;
 }
 
-body.home nav {
+/* body.home nav {
   background: url("../images/gradient-background.svg");
-}
+} */
 
 .burger-menu { /*needs to be hidden on web version */
     color: var(--color-accent-primary);
@@ -2263,7 +2263,7 @@ img[alt="audio dichotics home page mockup"] {
 .value-card__percentage {
     display: block;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: var(--fw-medium);
     color: var(--color-accent-tertiary); 
     line-height: 1;
     margin-bottom: 0.5rem;
@@ -3374,6 +3374,10 @@ img[alt="audio dichotics home page mockup"] {
 
     .project-title {
       font-size: 1.5rem;
+    }
+
+    .value-added-section {
+        padding-right: calc(var(--gap) / 2); 
     }
 }
 
