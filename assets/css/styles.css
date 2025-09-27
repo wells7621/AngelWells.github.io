@@ -122,8 +122,11 @@ a:hover {
 
 /* polaroid effect for image */
 .about-image img {
-    height: 28rem;
-    width: 28rem;
+    /* height: 28rem;
+    width: 28rem; */
+    max-width: 100%;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     background-color: white;
     padding: 1.5rem 1.5rem 3rem;
@@ -134,6 +137,7 @@ a:hover {
     /* margin-top: 20px; */
     /* transition: transform 0.3s ease; */
     animation: fadeInSkew 1.5s ease forwards;
+    box-sizing: border-box;
 }
 
 .about-content {
@@ -193,6 +197,10 @@ body[data-loaded="false"] .navigation {
     opacity: 0 !important;
     transform: translateY(-10px) !important;
     pointer-events: none !important;
+}
+
+body.home nav {
+  background: url("../images/gradient-background.svg");
 }
 
 .burger-menu { /*needs to be hidden on web version */
@@ -263,6 +271,20 @@ body[data-loaded="false"] .navigation {
 
 .challenge-box h4 {
   margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.challenge-box ul {
+  padding-left: 1.5rem; 
+  margin: 0;
+  /* margin-top: 10px; */
+  list-style-position: outside; 
+}
+
+.challenge-box li {
+  margin-bottom: 0.5rem;
+  padding-left: 0;
+  text-indent: 0;
 }
 
 .company-name {
@@ -770,6 +792,11 @@ h4 {
   /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
    background-size: 400% 400%;
    animation: gradient 15s ease infinite; */
+
+
+   /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+   background-size: 400% 400%;
+   animation: gradient 15s ease infinite; */
 }
 
 @keyframes gradient {
@@ -892,7 +919,8 @@ h4 {
 .hero-text {
   max-width: 700px; /* 600px */
   /* color: #000; */
-  color: var(--color-text-inverse);
+  /* color: var(--color-text-inverse); */
+  color: var(--color-text-primary);
   /* padding: 10px; */
   padding: 10px 10px 10px 50px;
   font-family: var(--font-body);
@@ -903,7 +931,7 @@ h4 {
   font-family: var(--font-heading);
   font-size: 3.5rem; /* 2.5 */
   margin-bottom: 1rem;
-  color: var(--color-text-inverse);
+  color: var(--color-text-primary);
 }
 
 .hero-text p {
@@ -996,11 +1024,18 @@ s {
   margin: 2rem 0;
 }
 
+.key-points ul {
+  padding-left: 0;
+  list-style: none;
+}
+
 .key-points li{
   margin-bottom: 1rem;
   position: relative;
-  padding-left: 2rem;
+  padding-left: 1.75rem;
+  line-height: 1.6;
   font-weight: 300;
+  text-indent: 0;
 }
 
 .key-points strong {
@@ -1010,10 +1045,11 @@ s {
 .key-points li:before {
   content: ".";
   color: var(--color-accent-secondary);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   position: absolute;
   left: 0;
-  top: -0.3rem;
+  top: -1.1rem;
+  line-height: 1;
 }
 
 /* L */
@@ -2178,9 +2214,9 @@ img[alt="audio dichotics home page mockup"] {
 
 
 /* U */
-ul {
+/* ul {
     list-style-type: none;
-}
+} */
 
 /* .updated-wireframes-carousel {
   margin: 3rem 0;
@@ -2203,6 +2239,43 @@ ul {
 }
 
 /* V */
+/* umrf site metric cards */
+.value-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.value-card {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1; 
+  min-width: 150px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.value-card__percentage {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent-tertiary); 
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.value-card__label {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary); /
+    text-transform: lowercase; 
+}
+
 .value-added-wrapper {
   /* padding: 3rem var(--mobile-padding) 1.5rem;
   max-width: var(--content-width);
@@ -2242,6 +2315,7 @@ ul {
 
 /* figma prototypes styling */
 .figma-embed {
+  max-width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   width: 375px;
   height: 700px;
