@@ -19,7 +19,7 @@
         <!-- scroll reveal effect -->
         <script src="https://unpkg.com/scrollreveal"></script>
 
-        <title>UOM Rewards | Angel Wells</title>
+        <title>DeltaARTS | Angel Wells</title>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
                 document.body.setAttribute("data-loaded", "true");
@@ -78,32 +78,36 @@
                         <p>The DeltaARTS website lacked the vibrant energy of an arts organization. My redesign transformed it by injecting a bold, brand-aligned color palette and streamlining cluttered sections like events and navigation into scannable, actionable content. This included strengthening calls-to-action and consolidating five fonts into a cohesive two-font system for better hierarchy and clarity.</p>
                     </div>
                 </div>
+        </section>
 
-                <div class="content-wrapper">
-                    <h3 class="section-title">
-                        Hero Section
-                    </h3>
-                    <div class="image-comparison">
-                        <h3 class="comparison-subheader">Before/After</h3>
-                        <div class="da-hero-carousel">
-                            <div class="splide" id="da-hero-carousel">
-                                <div class="splide__track">
-                                    <div class="splide__list">
-                                        <div class="splide__slide">
-                                            <img src="assets/images/DA_Hero_Section_Before.png" alt="delta arts before of hero section">
-                                        </div>
-                                        <div class="splide__slide">
-                                            <img src="assets/images/DA_Hero_Section_After.png" alt="delta arts after of hero section">
-                                        </div>
-                                    <div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="content-wrapper">
+            <h3 class="section-title">
+                Hero Section
+            </h3>
+            <div class="image-slider-container">
+                <div class="before-image">
+                    <img src="assets/images/DA_Hero_Section_Before.png">
+                    <div class="before-text">Before</div>
+                </div>
+                <div class="after-image">
+                    <img src="assets/images/DA_Hero_Section_After.png">
+                    <div class="after-text">After</div>
+                </div>
+                <div class="slider-handle" id="sliderHandle"></div>
+                <div class="slider-line">
+                    <div class="pulse-container">
+                        <svg role="presentation" focusable="false" fill="none" width="50" height="50" viewBox="0 0 50 50">
+                            <g>
+                                <rect width="50" height="50" rx="25" fill="#FBEBEC"></rect>
+                                <path d="m19.25 19-6 6 6 6m11.5 0 6-6-6-6" stroke="#000000" stroke-width=".75" stroke-linecap="square"></path>
+                            </g>
+                        </svg>
                     </div>
                 </div>
             </div>
+        </div>
 
-        </section>
+        <!-- Add a disclaimer that this was unofficial case study -->
 
         <!-- footer section -->
         <footer class="site-footer">
@@ -195,6 +199,94 @@
                     });
                 }
             });
+
+            const sliderHandle = document.querySelector("#sliderHandle");
+            const sliderLine = document.querySelector(".slider-line");
+            const beforeImage = document.querySelector(".before-image");
+            const afterImage = document.querySelector(".after-image");
+            const sliderContainer = document.querySelector(".image-slider-container");
+
+            let isDragging = false;
+
+            // Function to initialize the slider at the center position
+            const initializeSlider = () => {
+                const containerWidth = sliderContainer.offsetWidth;
+
+                // Set slider handle and line at center with a transition for initialization
+                sliderHandle.style.transition = "left 0.3s ease";
+                sliderLine.style.transition = "left 0.3s ease";
+
+                sliderHandle.style.left = "50%";
+                sliderLine.style.left = "50%";
+
+                // Set both images' clip-path to 50% (center)
+                beforeImage.style.clipPath = `inset(0 50% 0 0)`;
+                afterImage.style.clipPath = `inset(0 0 0 50%)`;
+            };
+
+            // Function to move the slider based on user interaction
+            const moveSlider = (clientX) => {
+                const containerRect = sliderContainer.getBoundingClientRect();
+                let offsetX = clientX - containerRect.left;
+
+                // Limit the slider movement within the full container width (0% to 100%)
+                if (offsetX < 0) offsetX = 0; // Prevent overflow on the left
+                if (offsetX > containerRect.width) offsetX = containerRect.width; // Prevent overflow on the right
+
+                const percentage = Math.round((offsetX / containerRect.width) * 100);
+
+                // Update the slider handle position and image clipping
+                sliderHandle.style.left = `${percentage}%`;
+                sliderLine.style.left = `${percentage}%`;
+
+                // Adjust the clip-path for both images
+                beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+                afterImage.style.clipPath = `inset(0 0 0 ${percentage}%)`;
+            };
+
+            // Add event listeners for both the handle and the line (including the SVG)
+            const startDragging = () => {
+                isDragging = true;
+
+                // Remove transitions while dragging for instant feedback
+                sliderHandle.style.transition = "none";
+                sliderLine.style.transition = "none";
+            };
+
+            const stopDragging = () => {
+                isDragging = false;
+
+                // Reapply transitions after dragging ends
+                sliderHandle.style.transition = "left 0.3s ease";
+                sliderLine.style.transition = "left 0.3s ease";
+            };
+
+            sliderHandle.addEventListener("mousedown", startDragging);
+            sliderLine.addEventListener("mousedown", startDragging); // Make SVG and line draggable
+
+            window.addEventListener("mousemove", (event) => {
+                if (isDragging) {
+                    moveSlider(event.clientX);
+                }
+            });
+
+            window.addEventListener("mouseup", stopDragging);
+
+            // For touch events on mobile
+            sliderHandle.addEventListener("touchstart", startDragging);
+            sliderLine.addEventListener("touchstart", startDragging); // Make SVG and line draggable
+
+            window.addEventListener("touchmove", (event) => {
+                if (isDragging) {
+                    moveSlider(event.touches[0].clientX);
+                }
+            });
+
+            window.addEventListener("touchend", stopDragging);
+
+            // Initialize the slider on page load
+            window.addEventListener("load", initializeSlider);
+
 
             // Update copyright year automatically
             document.getElementById('current-year').textContent = new Date().getFullYear();
