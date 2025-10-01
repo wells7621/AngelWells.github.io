@@ -218,6 +218,49 @@ body[data-loaded="false"] .navigation {
     display: none;
 }
 
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.top-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--color-accent-tertiary); /* Your brand color */
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(87, 85, 254, 0.3);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+}
+
+.top-btn:hover {
+  background: var(--color-accent-secondary); /* Your secondary color */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(87, 85, 254, 0.4);
+}
+
+.top-btn:active {
+  transform: translateY(0);
+}
+
+
 .bio {
     width: 25rem;
     padding: 0.625rem;
@@ -718,7 +761,7 @@ h1, h2, h3 {
   padding: 0;
 }
 
-/* TOGGLE ICONS */
+/* TOGGLE ICONS 
 .hamburger-menu.active .hamburger-icon {
   opacity: 0;
 }
@@ -740,7 +783,7 @@ h1, h2, h3 {
 
 .close-icon {
   opacity: 0;
-}
+} */
 
 .subtitle h4,
 .metric-value {
@@ -2969,6 +3012,13 @@ img[alt="audio dichotics home page mockup"] {
     } */
 }
 
+/* Hide on mobile menu desktop */
+@media (min-width: 769px) {
+    .floating-mobile-menu {
+        display: none;
+    }
+}
+
 /* Tablet adjustments (768px-1024px) - keep side-by-side but adjust spacing */
 @media (min-width: 768px) and (max-width: 1024px) {
     .landing-image.umrf-hero img {
@@ -3259,6 +3309,16 @@ img[alt="audio dichotics home page mockup"] {
       opacity: 1;
     }
 
+    .back-to-top {
+      bottom: 1.5rem;
+      right: 1.5rem;
+    }
+    
+    .top-btn {
+      width: 44px;
+      height: 44px;
+    }
+
     .contact-container {
       padding: 3rem 1.5rem;
     }
@@ -3307,6 +3367,141 @@ img[alt="audio dichotics home page mockup"] {
   
     .landing-image {
         margin-bottom: 2.5rem;
+    }
+
+    .floating-mobile-menu {
+        /* position: fixed;
+        right: 0.8rem;
+        z-index: 1000; */
+        position: relative;
+        display: inline-block;
+    }
+
+    .menu-toggle {
+        /* background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px; */
+        background: none; 
+        backdrop-filter: none; 
+        border: none; 
+        border-radius: 0;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); */
+        transition: all 0.3s ease;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* .menu-toggle:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: scale(1.05);
+    } */
+
+    .menu-toggle img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+
+    .close-menu:hover {
+        opacity: 1;
+    }
+
+
+    .menu-container {
+        /* background: rgba(255, 255, 255, 0.85); */
+        backdrop-filter: blur(20px);
+        border-radius: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        padding: 0.75rem;
+        /* min-width: 140px; */
+        position: absolute;
+        /* top: 100%; */
+        top: 0;
+        right: 0;
+        width: auto;
+        min-width: 160px;
+        /* margin-top: 0.5rem; */
+        opacity: 0;
+        visibility: hidden;
+        /* transform: translateY(-10px); */
+        transform-origin: top right;
+        transition: all 0.3s ease;
+        padding-top: 2rem;
+    }
+
+    .floating-mobile-menu.active .menu-container {
+        opacity: 1;
+        visibility: visible;
+        /* transform: translateY(0); */
+        transform: scale(1);
+    }
+
+    /* Hide the toggle button when menu is open */
+    .floating-mobile-menu.active .menu-toggle {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .menu-label {
+        font-size: 0.8rem;
+        font-weight: var(--fw-semibold);
+        color: var(--color-text-secondary);
+        margin-bottom: 0.5rem;
+        padding: 0 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .menu-item {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        color: var(--color-text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+    }
+
+    .menu-item:hover {
+        background: rgba(87, 85, 254, 0.1);
+        color: var(--color-accent-primary);
+    }
+
+    .menu-divider {
+        height: 1px;
+        background: rgba(0, 0, 0, 0.1);
+        margin: 0.5rem 0;
     }
 
     .navigation {
@@ -3562,6 +3757,21 @@ img[alt="audio dichotics home page mockup"] {
         width: 160px;
         padding: 0.35rem 0.7rem;
         font-size: 0.6rem;
+    }
+
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .top-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .top-btn svg {
+        width: 20px;
+        height: 20px;
     }
   
     .contact-container {
