@@ -51,6 +51,11 @@
     --color-text-secondary: #5A5A5A; /* for subheadings, captions, etc. */
     --color-text-inverse: #FFF7FC;  /* for text on dark backgrounds/buttons */
 
+    /* annotation dots' colors */
+    --annotation-red: #C42D3E;
+    --annotation-blue: #0078C9;
+    --annotation-purple: #3C51AD;
+
     /*--normal-font: 400;
     --bold-font: 700;
     --bolder-font: 900;
@@ -1018,167 +1023,107 @@ s {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* before/after image slider */
-.image-slider-container {
+/* annotations on images styling */
+.redesign-item {
+    margin-bottom: 4rem;
+}
+
+.image-with-annotations {
+  position: relative;
+  display: block; /* Change from inline-block to block */
+  width: 100%;
+  max-width: 800px; /* Match your container max-width */
+  margin: 0 auto 60px;
+}
+
+.image-with-annotations img {
+  /* width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.7rem; */
+  width: 100%;
+  height: auto;
+  max-width: 800px; /* Your desired display size */
+  display: block;
   margin: 0 auto;
-  margin-top: 5rem; 
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  height: 700px;
   border-radius: 0.7rem;
-  overflow: hidden;
 }
 
-.before-image img,
-.after-image img {
-  width: auto;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  image-rendering: -webkit-optimize-contrast; /* For WebKit browsers */
-  image-rendering: crisp-edges;
+.annotation-hint {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin: 1rem 0;
+  font-style: italic;
 }
 
-.before-image,
-.after-image {
-  clip-path: none; /* Ensure no clipping by default */
-}
-
-.before-image,
-.after-image {
+.annotation-dot {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-} 
-
-.before-text,
-.after-text {
-  position: absolute;
-  font-size: 1.5rem;
-  font-weight: var(--fw-medium);
-  color: var(--color-text-primary);
-  z-index: 4;
-  padding: 10px 20px;
-  /* background-color: #ffffff9e; */
-  background-color: rgba(255, 255, 255, 0.95);
-  /* border: 1px solid rgba(0, 0, 0, 0.1); */
-  border-radius: 0.3rem;
-  letter-spacing: 2px;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.before-text {
-  left: 20px; /* Position text to the left */
-  /* top: 20px; */
-  top: -10px;
-  z-index: 5;
-}
-
-.after-text {
-  right: 20px; /* Position text to the right */
-  /* top: 20px; */
-  top: -10px;
-  z-index: 3;
-}
-
-/* hides the after text initially */
-.after-image .after-text {
-  visibility: visible;
-  z-index: 3;
-}
-
-/* .after-image {
-  clip-path: inset(0 50% 0 0);
-} */
-
-.slider-handle {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 0px;
-  height: 100%;
-  background-color: #fff;
   cursor: pointer;
-  z-index: 2;
+  z-index: 10;
 }
 
-.slider-line {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 0px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  z-index: 1;
-}
-
-.pulse-container {
-  position: relative;
-  display: inline-block;
-}
-
-.pulse-container::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 70px; /* Larger than the SVG */
-  height: 70px;
+.dot {
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background-color: #ffffff; /* Color of the pulse */
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 0;
-  animation: pulse 1.5s infinite;
+  /* background: var(--color-accent-primary); */
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
 }
 
-@keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.6;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.8);
-    opacity: 0;
-  }
+.dot-red .dot {
+  background: var(--annotation-red);
 }
 
-.slider-line svg {
+.dot-blue .dot {
+  background: var(--annotation-blue);
+}
+
+.dot-purple .dot {
+  background: var(--annotation-purple);
+}
+
+.annotation-dot:hover .dot {
+  transform: scale(1.2);
+}
+
+/* Annotation Text Container - colored backgrounds */
+.dot-red .annotation-text {
+  background: var(--annotation-red);
+}
+
+.dot-blue .annotation-text {
+  background: var(--annotation-blue);
+}
+
+.dot-purple .annotation-text {
+  background: var(--annotation-purple);
+}
+
+.annotation-text {
   position: absolute;
-  top: 50%;
+  bottom: 100%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  cursor: pointer;
+  transform: translateX(-50%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Depth shadow */
+  font-weight: var(--fw-medium);
 }
 
-/* Prevent text/image selection while dragging */
-.slider-container,
-.before-image img,
-.after-image img {
-  user-select: none; /* Disable selection on most browsers */
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+ */
+.annotation-dot:hover .annotation-text {
+  opacity: 1;
 }
 
-.slider-handle,
-.slider-line {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
 
 /* J */
 
@@ -3278,6 +3223,18 @@ img[alt="audio dichotics home page mockup"] {
       padding: 1rem;
     }
 
+    .annotation-text {
+      white-space: normal;
+      width: 200px; 
+      text-align: center;
+      line-height: normal;
+      max-width: 80vw;
+      padding: 0.4rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      word-wrap: break-word;
+    }
+
     .contact-container {
       padding: 3rem 1.5rem;
     }
@@ -3573,6 +3530,12 @@ img[alt="audio dichotics home page mockup"] {
 
 /* for mobile screens */
 @media (max-width: 480px) {
+    .annotation-text {
+        width: 160px;
+        padding: 0.35rem 0.7rem;
+        font-size: 0.6rem;
+    }
+  
     .contact-container {
         padding: 3rem 1.5rem;
     }
