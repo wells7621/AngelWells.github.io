@@ -3430,7 +3430,7 @@ img[alt="audio dichotics home page mockup"] {
 
 
     .menu-container {
-        /* background: rgba(255, 255, 255, 0.85); */
+        background: rgba(255, 255, 255, 0.85); 
         backdrop-filter: blur(20px);
         border-radius: 16px;
         border: 1px solid rgba(0, 0, 0, 0.15);
@@ -3495,7 +3495,7 @@ img[alt="audio dichotics home page mockup"] {
 
     .menu-item:hover {
         background: rgba(87, 85, 254, 0.1);
-        color: var(--color-accent-primary);
+        color: var(--color-accent-secondary);
     }
 
     .menu-divider {
