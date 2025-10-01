@@ -99,7 +99,7 @@
             </div>
         </section>
 
-        <p class="annotation-hint">💡 Hover over the dots to see specific improvements</p>
+        <p class="annotation-hint">💡 Hover/Click over the dots to see specific improvements</p>
 
         <div class="content-wrapper">
             <!-- Hero section -->
@@ -262,9 +262,11 @@
         </div>
 
         <!-- disclaimer -->
-        <p class="problem-text">
-            Note: This was an unsolicited redesign created to demonstrate UX/UI improvements. All design work and recommendations are my own.
-        </p>
+        <div class="content-wrapper">
+            <p class="problem-text">
+                Note: This was an unsolicited redesign created to demonstrate UX/UI improvements. All design work and recommendations are my own.
+            </p>  
+        </div>
 
         <!-- footer section -->
         <footer class="site-footer">
@@ -341,6 +343,30 @@
                             nav.classList.remove('active');
                             document.body.style.overflow = '';
                         });
+                    });
+                }
+
+                const annotationDots = document.querySelectorAll('.annotation-dot');
+                
+                function closeAllDots() {
+                    annotationDots.forEach(dot => dot.classList.remove('active'));
+                }
+                
+                // Mobile touch devices
+                if ('ontouchstart' in window) {
+                    annotationDots.forEach(dot => {
+                        dot.addEventListener('touchstart', function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            closeAllDots();
+                            this.classList.add('active');
+                        });
+                    });
+                    
+                    document.addEventListener('touchstart', function(e) {
+                        if (!e.target.closest('.annotation-dot')) {
+                            closeAllDots();
+                        }
                     });
                 }
 

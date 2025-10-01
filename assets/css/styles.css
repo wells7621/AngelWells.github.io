@@ -557,7 +557,7 @@ body[data-loaded="false"] .navigation {
   margin-left: 20px;
   margin-right: 20px; */
   background-color: var(--background-color);
-  /* padding: 4rem var(--mobile-padding) 2rem; */
+  padding: 4rem var(--mobile-padding) 2rem;
   margin-top: 300px;
 }
 
@@ -1123,6 +1123,20 @@ s {
 .annotation-dot:hover .annotation-text {
   opacity: 1;
 }
+
+.annotation-dot:hover .dot {
+  transform: scale(1.2);
+}
+
+/* Mobile active state (via JavaScript) */
+.annotation-dot.active .annotation-text {
+  opacity: 1;
+}
+
+.annotation-dot.active .dot {
+  transform: scale(1.2);
+}
+
 
 
 /* J */
@@ -3235,6 +3249,16 @@ img[alt="audio dichotics home page mockup"] {
       word-wrap: break-word;
     }
 
+    .annotation-dot:hover .annotation-text {
+      /* Disable hover on mobile */
+      opacity: 0;
+    }
+    
+    .annotation-dot.active .annotation-text {
+      /* Enable active state on mobile */
+      opacity: 1;
+    }
+
     .contact-container {
       padding: 3rem 1.5rem;
     }
@@ -3477,6 +3501,10 @@ img[alt="audio dichotics home page mockup"] {
         font-size: 1.5rem;
     }
 
+    .site-footer {
+      padding: 4rem var(--mobile-padding) 2rem;
+    }
+
     .styled-video {
         max-width: 90vw;
         border-radius: 12px;
@@ -3669,6 +3697,10 @@ img[alt="audio dichotics home page mockup"] {
     .side-quest-image {
         height: 200px;
         width: auto;
+    }
+
+    .site-footer {
+      padding: 4rem var(--mobile-padding) 2rem;
     }
 
     .value-added-section {
