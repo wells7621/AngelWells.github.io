@@ -26,28 +26,36 @@
     <body data-loaded="false">
         <!-- navbar -->
         <nav>
-            <!-- <a href="index.html">
-                <img src="assets/images/site-logo.png" alt="Logo" class="logo" />
-            </a> -->
-
             <a href="index.html" class="logo" aria-label="Angel Wells Home">
                 <img src="assets/images/Logo.svg">
             </a>
 
-            <!-- linkedin icon -->
             <div class="nav-right">
+                <!-- mobile menu -->
+                <nav class="floating-mobile-menu">
+                    <button class="menu-toggle" id="menuToggle">
+                        <img src="assets/images/Menu.svg" alt="Menu" class="hamburger-icon">
+                    </button>
 
-                <a href="https://linkedin.com/in/angel-hudgins-wells" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
-                        <path d="M6.08605 3.11249C6.08564 3.93757 5.76465 4.72868 5.19369 5.3118C4.62273 5.89493 3.84856 6.22229 3.0415 6.22188C2.23444 6.22146 1.4606 5.89331 0.890205 5.3096C0.319813 4.7259 -0.000403149 3.93446 3.80928e-07 3.10938C0.000403911 2.28431 0.321394 1.4932 0.892357 0.910073C1.46332 0.326951 2.23748 -0.000412147 3.04454 3.8943e-07C3.8516 0.000412925 4.62545 0.328567 5.19584 0.912273C5.76623 1.49598 6.08645 2.28742 6.08605 3.11249ZM6.17734 8.52553H0.091291V28H6.17734V8.52553ZM15.7933 8.52553H9.73767V28H15.7324V17.7806C15.7324 12.0876 22.99 11.5587 22.99 17.7806V28H29V15.6651C29 6.06789 18.2581 6.42564 15.7324 11.1387L15.7933 8.52553Z" fill="black"/>
-                    </svg>
-                </a>
+                    <div class="menu-container" id="menuContainer">
+                        <button class="close-menu" id="closeMenu">
+                            <img src="assets/images/Close_round.svg" alt="Close Menu" class="close-icon">
+                        </button>
 
-                <!-- hamburger menu -->
-                <button class="hamburger-menu" id="hamburger">
-                    <img src="assets/images/Menu.svg" alt="Menu" class="hamburger-icon">
-                    <img src="assets/images/Close_round.svg" alt="Close Menu" class="close-icon">
-                </button>
+                        <div class="menu-label">Menu</div>
+                        <div class="menu-items">
+                            <a href="about.html" class="menu-item">About</a>
+                            <a href="work.html" class="menu-item">Projects</a>
+                            <a href="contact.html" class="menu-item">Contact</a>
+                            
+                            <!-- Social Links -->
+                            <div class="menu-divider"></div>
+                            <a href="https://linkedin.com/in/angel-hudgins-wells" class="menu-item" target="_blank">LinkedIn</a>
+                            <a href="mailto:angelhudgins0401@gmail.com" class="menu-item">Email</a>
+                            <a href="assets/docs/Angel_Wells_Resume_9_25.docx.pdf" class="menu-item" download>Resume</a>
+                        </div>
+                    </div>
+                </nav>
             </div>
 
             <!-- nav links -->
@@ -95,6 +103,15 @@
             <!-- <div class="bio animate__animated animate__slideInRight"> 
             </div> -->
         </section>
+
+        <!-- Back to Top Button -->
+        <div class="back-to-top">
+            <a href="#top" class="top-btn" aria-label="Back to top">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 20L12 4M12 4L5 11M12 4L19 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
 
         <!-- footer section -->
         <footer class="site-footer">
@@ -174,27 +191,54 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                document.body.setAttribute('data-loaded', 'true');
-
-                const hamburger = document.getElementById('hamburger');
-                const nav = document.getElementById('navigation');
-
-                if (hamburger && nav) {
-                hamburger.addEventListener('click', () => {
-                    hamburger.classList.toggle('active');
-                    nav.classList.toggle('active');
-                    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-                });
-
-                document.querySelectorAll('.navigation a').forEach(link => {
-                    link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    nav.classList.remove('active');
-                    document.body.style.overflow = '';
+                const menuToggle = document.getElementById('menuToggle');
+                const closeMenu = document.getElementById('closeMenu');
+                const floatingMenu = document.querySelector('.floating-mobile-menu');
+                
+                if (menuToggle && floatingMenu) {
+                    menuToggle.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        floatingMenu.classList.add('active');
                     });
-                });
+                    
+                    if (closeMenu) {
+                        closeMenu.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            floatingMenu.classList.remove('active');
+                        });
+                    }
+                    
+                    // Close menu when clicking outside
+                    document.addEventListener('click', function(e) {
+                        if (!e.target.closest('.floating-mobile-menu')) {
+                            floatingMenu.classList.remove('active');
+                        }
+                    });
+                    
+                    // Close menu when clicking a menu item
+                    document.querySelectorAll('.menu-item').forEach(item => {
+                        item.addEventListener('click', () => {
+                            floatingMenu.classList.remove('active');
+                        });
+                    });
+                }
+
+                // back to top button
+                const backToTop = document.querySelector('.back-to-top');
+    
+                if (backToTop) {
+                    window.addEventListener('scroll', function() {
+                        if (window.pageYOffset > 300) {
+                            backToTop.classList.add('visible');
+                        } else {
+                            backToTop.classList.remove('visible');
+                        }
+                    });
                 }
             });
+
+            // Update copyright year automatically
+            document.getElementById('current-year').textContent = new Date().getFullYear();
          </script>
     </body> 
 
